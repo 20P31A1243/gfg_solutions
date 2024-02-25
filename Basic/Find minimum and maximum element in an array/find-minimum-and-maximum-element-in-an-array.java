@@ -32,7 +32,7 @@ class GFG {
                 a[i] = Long.parseLong(inputLine[i]);
             }
             
-            Compute obj = new Compute();
+            Solution obj = new Solution();
             Pair product = obj.getMinMax(a, n); 
             System.out.println(product.first+" "+product.second);
             
@@ -55,15 +55,20 @@ class GFG {
         this.first = first;  
         this.second = second;  
     }  
-} */
+} 
 
-class Compute 
+Java users need to return result in Pair class
+For Example -> return new Pair(minimum,maximum)
+*/
+
+class Solution 
 {
     static Pair getMinMax(long arr[], long N)  
     {
-        //Write your code here
-    long max=arr[0];
-    long min=arr[0];
+        
+        //code here
+       long max=arr[0];
+     long min=arr[0];
         for(int i=0;i<N;i++)
         {
             if(arr[i]>max){
