@@ -46,28 +46,27 @@ class Check{
     public int firstNonRepeating(int arr[], int n) 
     { 
         // Complete the function
-        int i=0;
-        
-       int s=0;
-        while(i<n)
+        HashMap<Integer, Integer> m= new HashMap<>();
+        for(int i=0;i<n;i++)
         {
-            int c=0;
-            for(int j=0;j<n;j++)
+            if(m.containsKey(arr[i]))
             {
-                if(arr[i]==arr[j]){
-                    c=c+1;
-              
-                }
+                m.put(arr[i],m.get(arr[i])+1);
             }
-            if(c==1)
-                return s=arr[i];
-            
-            i++;
+            else
+            {
+                m.put(arr[i],1);
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            if(m.get(arr[i])==1)
+            {
+                return arr[i];
+            }
         }
         return 0;
-        
-    }  
+        }  
     
 }
-
 
