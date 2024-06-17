@@ -16,21 +16,23 @@ class Convert_To_Five {
 // } Driver Code Ends
 
 
-
-
 class GfG {
-    int convertfive(int num) {
-        int i=0;
-        int val=num;
-        while(val!=0)
+    int convertfive(int n) {
+        // Your code here
+        int result=0;
+        int place=1;
+        while(n!=0)
         {
-            int r=val%10;
-            if(r==0){
-                num=num+(int)(5*Math.pow(10,i));
-            }
-            i=i+1;
-            val=val/10;
+            int r=n%10;
+            if(r==0)
+             r=5;
+        
+            result=result+(r*place);
+            n=n/10;
+            place=place*10;
+            
+            
         }
-        return num;
+        return result;
     }
 }
